@@ -27,9 +27,10 @@
 
 .brand {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-size: clamp(0.875rem, 2.2vw, 1.25rem);
+  letter-spacing: 0.1em;
   justify-self: start;
+  white-space: nowrap;
 }
 
 .nav {
@@ -55,7 +56,8 @@
 
 .hero {
   position: relative;
-  min-height: 75vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: end center;
   overflow: hidden;
@@ -72,7 +74,7 @@
   max-width: var(--container-max);
   width: 100%;
   margin-inline: auto;
-  padding-block: 4rem 2.5rem;
+  padding-block: clamp(2rem, 8vh, 4rem) clamp(1.5rem, 5vh, 2.5rem);
 }
 
 .hero__video {
@@ -98,19 +100,20 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-block: 4rem 2.5rem;
+  padding-block: clamp(2rem, 8vh, 4rem) clamp(1.5rem, 5vh, 2.5rem);
   width: 100%;
   animation: rise 0.9s ease both;
 }
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: var(--text-heading);
+  font-size: clamp(1.5rem, 4vw + 0.5rem, var(--text-heading));
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: clamp(0.04em, 0.5vw, 0.08em);
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.65rem, 2vh, 1rem);
   line-height: 1.25;
+  max-width: min(100%, 52rem);
 }
 
 .hero__eyebrow {
@@ -124,12 +127,12 @@
 
 .hero__lede {
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  font-size: clamp(0.75rem, 1.5vw + 0.35rem, var(--text-body));
   letter-spacing: 0.06em;
   text-transform: uppercase;
   opacity: 0.9;
-  margin-bottom: 1.75rem;
-  max-width: 36rem;
+  margin-bottom: clamp(1rem, 3vh, 1.75rem);
+  max-width: min(100%, 36rem);
 }
 
 @keyframes rise {
@@ -274,9 +277,9 @@
 }
 
 @media (max-width: 640px) {
-  .hero h1 {
-    font-size: clamp(1.6rem, 7vw, 2.25rem);
-    letter-spacing: 0.05em;
+  .hero__content,
+  .hero--left .hero__content {
+    padding-block: clamp(1.5rem, 6vh, 2.5rem) clamp(1.25rem, 4vh, 2rem);
   }
 }
 
@@ -736,8 +739,8 @@
 .site-footer__logo {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-size: clamp(0.875rem, 2.2vw, 1.25rem);
+  letter-spacing: 0.1em;
   margin-bottom: 1.25rem;
 }
 

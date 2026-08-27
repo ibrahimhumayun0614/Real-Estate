@@ -197,8 +197,8 @@ function HomePage() {
                 Experience integrity and guidance you can rely on in real estate
               </h2>
               <p className="about__copy">
-                Saif Belhasa Real Estate is a global private equity real estate
-                company. At Saif Belhasa Real Estate your property journey begins
+                AMAADA REALTY is a global private equity real estate
+                company. At AMAADA REALTY your property journey begins
                 with a conversation — one that’s focused on your aspirations.
                 From premium residences to high-yield investments, we offer a
                 tailored, discreet advisory experience built on trust, market
@@ -308,7 +308,7 @@ function HomePage() {
             <header className="partners__header">
               <h2 id="partners-heading">Our partners</h2>
               <p className="partners__copy">
-                Belhasa Real Estate proudly collaborates with leading developers
+                AMAADA REALTY proudly collaborates with leading developers
                 to bring you exceptional, high-quality properties from trusted
                 partners.
               </p>

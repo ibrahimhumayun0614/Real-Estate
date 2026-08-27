@@ -24,7 +24,7 @@ function HeroSection({
     >
       <video
         className="hero__video"
-        src="/videos/hero.mp4"
+        src="/videos/amada-realty-hero.mp4"
         autoPlay
         muted
         loop

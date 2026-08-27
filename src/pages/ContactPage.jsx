@@ -139,12 +139,12 @@ function ContactPage() {
                 </div>
                 <div className="contact-page__detail">
                   <p className="contact-page__label">Email</p>
-                  <a href="mailto:info@belhasarealestate.com">info@belhasarealestate.com</a>
+                  <a href="mailto:info@amaadarealty.com">info@amaadarealty.com</a>
                 </div>
                 <div className="contact-page__detail">
                   <p className="contact-page__label">Address</p>
                   <address>
-                    Saif Belhasa Real Estate
+                    AMAADA REALTY
                     <br />
                     Dubai, United Arab Emirates
                   </address>

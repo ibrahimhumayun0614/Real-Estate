@@ -21,8 +21,8 @@ function Footer() {
     <footer className="site-footer" id="contact">
       <div className="container site-footer__grid">
         <div className="site-footer__brand">
-          <a href="/" className="site-footer__logo" aria-label="BRE home">
-            BRE
+          <a href="/" className="site-footer__logo" aria-label="AMAADA REALTY home">
+            AMAADA REALTY
           </a>
           <p className="site-footer__tagline">
             Discover your dream home with ease. Buy, sell, or invest in
@@ -58,7 +58,7 @@ function Footer() {
           </a>
           <p className="site-footer__label site-footer__label--spaced">Address</p>
           <address className="site-footer__value site-footer__address">
-            Saif Belhasa Real Estate
+            AMAADA REALTY
             <br />
             Dubai, United Arab Emirates
           </address>
@@ -90,7 +90,7 @@ function Footer() {
       <div className="site-footer__bar">
         <div className="container">
           <p>
-            &copy; {new Date().getFullYear()} Belhasa Real Estate. All rights
+            &copy; {new Date().getFullYear()} AMAADA REALTY. All rights
             reserved.
           </p>
         </div>

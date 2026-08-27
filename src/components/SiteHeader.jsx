@@ -6,8 +6,8 @@ function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link to="/" className="brand" aria-label="BRE home">
-          BRE
+        <Link to="/" className="brand" aria-label="AMAADA REALTY home">
+          AMAADA REALTY
         </Link>
 
         <nav className="nav" aria-label="Primary">
