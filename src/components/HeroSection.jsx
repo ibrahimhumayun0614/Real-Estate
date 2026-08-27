@@ -29,7 +29,6 @@ function HeroSection({
         muted
         loop
         playsInline
-        poster="/videos/hero-poster.jpg"
       />
       <div className="hero__veil" aria-hidden="true" />
 
