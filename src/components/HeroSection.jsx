@@ -24,11 +24,13 @@ function HeroSection({
     >
       <video
         className="hero__video"
-        src="/videos/amada-realty-hero.mp4"
+        src="/videos/hero.mp4"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
+        poster="/videos/hero-poster.jpg"
       />
       <div className="hero__veil" aria-hidden="true" />
 
