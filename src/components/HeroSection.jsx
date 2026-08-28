@@ -30,7 +30,6 @@ function HeroSection({
         loop
         playsInline
         preload="auto"
-        poster="/videos/hero-poster.jpg"
       />
       <div className="hero__veil" aria-hidden="true" />
 
