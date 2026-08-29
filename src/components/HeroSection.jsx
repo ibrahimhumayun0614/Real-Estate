@@ -8,6 +8,7 @@ function HeroSection({
   ctaLink = '#contact',
   showCta = true,
   align = 'center',
+  compact = false,
 }) {
   const defaultTitle = (
     <>
@@ -19,7 +20,7 @@ function HeroSection({
 
   return (
     <section
-      className={`hero${align === 'left' ? ' hero--left' : ''}`}
+      className={`hero${align === 'left' ? ' hero--left' : ''}${compact ? ' hero--compact' : ''}`}
       aria-label="Hero"
     >
       <video

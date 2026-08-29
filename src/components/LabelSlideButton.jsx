@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAnimate, useReducedMotion } from 'motion/react'
 
 const borderColorOf = (b) => b?.borderColor ?? 'transparent'
@@ -274,10 +275,32 @@ export function LabelSlideButton(props) {
     if (hovered.current) onLeave()
   }
 
+  const navigate = useNavigate()
   const isLink = typeof link === 'string' && link.length > 0
+  const isInternalRouterLink = isLink && !newTab && link.startsWith('/') && !link.includes('#')
+
+  const handleClick = (e) => {
+    if (props.onClick) {
+      props.onClick(e)
+    }
+    if (
+      isInternalRouterLink &&
+      !e.defaultPrevented &&
+      e.button === 0 &&
+      !e.metaKey &&
+      !e.ctrlKey &&
+      !e.altKey &&
+      !e.shiftKey
+    ) {
+      e.preventDefault()
+      navigate(link)
+    }
+  }
+
   const Tag = isLink ? 'a' : 'button'
   const tagProps = {
     'aria-label': showText ? undefined : label || undefined,
+    onClick: handleClick,
     ...(isLink
       ? {
           href: link,

@@ -10,11 +10,21 @@ const PARTNER_LOGOS = Array.from({ length: 8 }, (_, index) => ({
   title: `Partner ${index + 1}`,
 }))
 
+const FEATURED_DEVELOPMENTS = [
+  { id: 1, image: '/images/AMADAREALTY_1.jpg', alt: 'Featured Development 1' },
+  { id: 2, image: '/images/AMADAREALTY_2.jpeg', alt: 'Featured Development 2' },
+  { id: 3, image: '/images/AMADAREALTY_3.jpg', alt: 'Featured Development 3' },
+  { id: 4, image: '/images/AMADAREALTY_4.jpg', alt: 'Featured Development 4' },
+  { id: 5, image: '/images/AMADAREALTY_5.jpg', alt: 'Featured Development 5' },
+  { id: 6, image: '/images/AMADAREALTY_6.jpg', alt: 'Featured Development 6' },
+]
+
 const FEATURED_PROPERTIES = [
   {
     id: 'maple-grove',
     badge: 'Renovate',
     title: 'Maple Grove Residency',
+    image: '/images/AMADAREALTY_1.jpg',
     price: '$600,000',
     address: '2217 Cedar Grove Way, Denver, Co 80206',
     beds: 2,
@@ -25,6 +35,7 @@ const FEATURED_PROPERTIES = [
     id: 'silverleaf',
     badge: 'Rent',
     title: 'Silverleaf Residency',
+    image: '/images/AMADAREALTY_2.jpeg',
     price: '$800,000',
     address: '412 Bayview Terrace, Miami, Fl 33139',
     beds: 2,
@@ -35,6 +46,7 @@ const FEATURED_PROPERTIES = [
     id: 'downtown-horizon',
     badge: 'Sell',
     title: 'Downtown Horizon Living',
+    image: '/images/AMADAREALTY_3.jpg',
     price: '$700,000',
     address: 'Skyline Tower, Downtown Dubai',
     beds: 2,
@@ -45,6 +57,7 @@ const FEATURED_PROPERTIES = [
     id: 'palm-court',
     badge: 'Sell',
     title: 'Palm Court Residences',
+    image: '/images/AMADAREALTY_4.jpg',
     price: '$950,000',
     address: '18 Marina Walk, Dubai Marina',
     beds: 3,
@@ -55,6 +68,7 @@ const FEATURED_PROPERTIES = [
     id: 'oak-ridge',
     badge: 'Rent',
     title: 'Oak Ridge Estate',
+    image: '/images/AMADAREALTY_5.jpg',
     price: '$520,000',
     address: '904 Highland Avenue, Austin, Tx 78704',
     beds: 2,
@@ -65,6 +79,7 @@ const FEATURED_PROPERTIES = [
     id: 'crescent-bay',
     badge: 'Renovate',
     title: 'Crescent Bay Villas',
+    image: '/images/AMADAREALTY_6.jpg',
     price: '$1,150,000',
     address: '7 Palm Jumeirah Crescent, Dubai',
     beds: 4,
@@ -154,6 +169,12 @@ function HomePage() {
               {FEATURED_PROPERTIES.map((property) => (
                 <article key={property.id} className="property-card">
                   <div className="property-card__media">
+                    <img
+                      src={property.image}
+                      alt={property.title}
+                      className="property-card__image"
+                      loading="lazy"
+                    />
                     <span className="property-card__badge">{property.badge}</span>
                   </div>
 
@@ -189,7 +210,14 @@ function HomePage() {
 
         <section className="about" id="group" aria-labelledby="about-heading">
           <div className="container about__inner">
-            <div className="about__media" aria-hidden="true" />
+            <div className="about__media">
+              <img
+                src="/images/AMADAREALTY_7.jpeg"
+                alt="About AMAADA Realty"
+                className="about__image"
+                loading="lazy"
+              />
+            </div>
 
             <div className="about__content">
               <p className="about__eyebrow">About us</p>
@@ -286,17 +314,14 @@ function HomePage() {
             </header>
 
             <div className="developments__grid">
-              {[
-                'Emirates Garden Villas',
-                'Desert Rose Villas',
-                'Golden Sands Residences',
-                'Coastal Haven Dubai',
-                'Falcon Crest Community',
-                'Oasis Park Villas',
-              ].map((name) => (
-                <article key={name} className="development-card">
-                  <div className="development-card__media" aria-hidden="true" />
-                  <h3 className="development-card__title">{name}</h3>
+              {FEATURED_DEVELOPMENTS.map((item) => (
+                <article key={item.id} className="development-card">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="development-card__image"
+                    loading="lazy"
+                  />
                 </article>
               ))}
             </div>

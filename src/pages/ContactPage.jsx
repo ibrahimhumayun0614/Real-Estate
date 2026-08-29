@@ -2,15 +2,52 @@ import { useState } from 'react'
 import SiteHeader from '../components/SiteHeader'
 import HeroSection from '../components/HeroSection'
 import Footer from '../components/Footer'
-import LabelSlideButton from '../components/LabelSlideButton'
+
+function InstagramIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  )
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  )
+}
+
+function YouTubeIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+function ArrowRightIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  )
+}
 
 function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     message: '',
   })
+  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -19,19 +56,20 @@ function ContactPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 4000)
   }
 
   return (
     <>
       <SiteHeader />
-      <main>
+      <main className="contact-main">
         <HeroSection
           eyebrow="Our contact"
           title={
             <>
-              Building relationships through every
-              <br />
-              conversation we share
+              <span>Building relationships through</span>
+              <span>every conversation we share</span>
             </>
           }
           lede=""
@@ -39,121 +77,124 @@ function ContactPage() {
           ctaLabel="Send a message"
           showCta={false}
           align="left"
+          compact={true}
         />
 
-        <section className="contact-page" id="contact-form" aria-label="Contact form">
-          <div className="container contact-page__inner">
-            <div className="contact-page__grid">
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="contact-form__field">
-                  <label htmlFor="name">Full name</label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    required
-                  />
+        <section className="contact-section" id="contact-form" aria-label="Contact form">
+          <div className="container contact-section__grid">
+            <div className="contact-card">
+              <h2 className="contact-card__heading">SEND US A MESSAGE</h2>
+
+              <form className="contact-card__form" onSubmit={handleSubmit}>
+                <div className="contact-card__row">
+                  <div className="contact-card__field">
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="First name *"
+                      required
+                    />
+                  </div>
+                  <div className="contact-card__field">
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Last name *"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div className="contact-form__field">
-                  <label htmlFor="email">Email address</label>
+                <div className="contact-card__field">
                   <input
-                    id="email"
-                    name="email"
                     type="email"
+                    name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="you@example.com"
+                    placeholder="Email *"
                     required
                   />
                 </div>
 
-                <div className="contact-form__field">
-                  <label htmlFor="phone">Phone number</label>
+                <div className="contact-card__field">
                   <input
-                    id="phone"
-                    name="phone"
                     type="tel"
+                    name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+971 50 000 0000"
-                  />
-                </div>
-
-                <div className="contact-form__field">
-                  <label htmlFor="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your property goals"
+                    placeholder="Phone number *"
                     required
                   />
                 </div>
 
-                <LabelSlideButton
-                  label="Send message"
-                  newTab={false}
-                  buttonType="submit"
-                  padding="8px 14px"
-                  gap={10}
-                  rounded={8}
-                  colors={{
-                    fill: '#000000',
-                    textColor: '#FFFFFF',
-                    hoverFill: '#FFFFFF',
-                    hoverTextColor: '#000000',
-                  }}
-                  border={{
-                    borderColor: '#000000',
-                    borderStyle: 'solid',
-                    borderWidth: 1,
-                  }}
-                  hoverBorderColor="#000000"
-                  icon={{
-                    side: 'right',
-                    size: 12,
-                    type: 'symbol',
-                    angle: 0,
-                    color: '#000000',
-                    padding: 6,
-                    rounded: 100,
-                    background: '#FFFFFF',
-                    hoverColor: '#FFFFFF',
-                    restSymbol: '→',
-                    hoverSymbol: '→',
-                    hoverBackground: '#000000',
-                  }}
-                />
+                <div className="contact-card__field">
+                  <textarea
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Message"
+                  />
+                </div>
+
+                <button type="submit" className="contact-card__submit">
+                  <span>{submitted ? 'MESSAGE SENT' : 'SUBMIT NOW'}</span>
+                  <ArrowRightIcon />
+                </button>
               </form>
 
-              <aside className="contact-page__details">
-                <div className="contact-page__detail">
-                  <p className="contact-page__label">Phone</p>
-                  <a href="tel:+971800235272">+971 800 235 272</a>
-                </div>
-                <div className="contact-page__detail">
-                  <p className="contact-page__label">Email</p>
-                  <a href="mailto:info@amaadarealty.com">info@amaadarealty.com</a>
-                </div>
-                <div className="contact-page__detail">
-                  <p className="contact-page__label">Address</p>
-                  <address>
-                    AMAADA REALTY
-                    <br />
-                    Dubai, United Arab Emirates
-                  </address>
-                </div>
-                <div className="contact-page__detail">
-                  <p className="contact-page__label">Office hours</p>
-                  <p>Monday – Friday, 9:00 AM – 6:00 PM</p>
-                </div>
-              </aside>
+              <div className="contact-card__mail">
+                <span className="contact-card__mail-label">MAIL</span>
+                <a href="mailto:info@amaadarealty.com" className="contact-card__mail-address">
+                  info@amaadarealty.com
+                </a>
+              </div>
+
+              <div className="contact-card__socials">
+                <a
+                  href="https://www.instagram.com/amada_realty?utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card__social-btn"
+                  aria-label="Instagram"
+                >
+                  <InstagramIcon />
+                  <span>INSTAGRAM</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/@amadarealty-e7o"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card__social-btn"
+                  aria-label="YouTube"
+                >
+                  <YouTubeIcon />
+                  <span>YOUTUBE</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/people/Amada-Realty-LLC/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card__social-btn"
+                  aria-label="Facebook"
+                >
+                  <FacebookIcon />
+                  <span>FACEBOOK</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="contact-media">
+              <img
+                src="/images/AMADAREALTY_8.jpg"
+                alt="AMAADA Realty Luxury Residence"
+                className="contact-media__image"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>

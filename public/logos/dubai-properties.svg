@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 85" fill="none" width="100%" height="100%">
+  <!-- DUBAI -->
+  <g fill="#0F172A">
+    <!-- D -->
+    <path d="M12 12 H32 C43 12 51 20 51 31 C51 42 43 50 32 50 H12 V12 Z M23 21 V41 H31 C37 41 41 37 41 31 C41 25 37 21 31 21 H23 Z" />
+    <!-- U -->
+    <path d="M59 12 H70 V33 C70 38 74 41 79 41 C84 41 88 38 88 33 V12 H99 V33 C99 44 91 50 79 50 C67 50 59 44 59 33 V12 Z" />
+    <!-- B -->
+    <path d="M108 12 H128 C135 12 140 16 140 22 C140 26 137 29 133 30 C138 31 142 35 142 40 C142 46 136 50 128 50 H108 V12 Z M119 20 V27 H127 C130 27 132 25 132 23.5 C132 22 130 20 127 20 H119 Z M119 35 V42 H128 C131 42 133 40 133 38.5 C133 37 131 35 128 35 H119 Z" />
+    <!-- A Left Leg -->
+    <path d="M168 50 L152 12 H164 L175 39 L171 50 H168 Z" />
+    <!-- A Right Leg Base -->
+    <path d="M174 42 L181 50 H193 L178 35 Z" />
+    <!-- A crossbar -->
+    <path d="M162 38 H178 V43 H162 Z" />
+    <!-- I -->
+    <path d="M204 12 H215 V50 H204 Z" />
+  </g>
+  <!-- Red Tick Accent on top of A -->
+  <polygon points="171,28 178,35 210,0 200,0 178,25 174,21" fill="#E42313" />
+  
+  <!-- PROPERTIES -->
+  <text x="12" y="74" font-family="'Inter', 'Segoe UI', -apple-system, sans-serif" font-size="20" font-weight="600" fill="#64748B" letter-spacing="0.28em">PROPERTIES</text>
+</svg>
