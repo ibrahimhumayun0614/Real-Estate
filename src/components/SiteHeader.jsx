@@ -1,10 +1,24 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import LabelSlideButton from './LabelSlideButton'
 import { NAV_ITEMS } from '../constants/nav'
 
-function SiteHeader() {
+function SiteHeader({ forceSolid = false }) {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30)
+    }
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const hasBackground = forceSolid || isScrolled
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${hasBackground ? 'site-header--scrolled' : 'site-header--transparent'}`}>
       <div className="container site-header__inner">
         <Link to="/" className="brand" aria-label="AMAADA REALTY home">
           AMAADA REALTY

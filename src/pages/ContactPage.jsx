@@ -155,15 +155,15 @@ function ContactPage() {
                     side: 'right',
                     size: 11,
                     type: 'symbol',
-                    angle: 0,
+                    angle: 315,
                     color: '#000000',
                     padding: 4,
                     rounded: 100,
                     background: '#FFFFFF',
                     hoverBackground: '#FFFFFF',
                     hoverColor: '#000000',
-                    restSymbol: '→',
-                    hoverSymbol: '→',
+                    restSymbol: '↗',
+                    hoverSymbol: '↗',
                   }}
                   style={{
                     alignSelf: 'flex-start',

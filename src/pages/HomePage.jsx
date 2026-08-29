@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import LabelSlideButton from '../components/LabelSlideButton'
 import ScrollCounter from '../components/ScrollCounter'
 import LogoLoop from '../components/LogoLoop'
@@ -99,70 +100,55 @@ const FEATURED_DEVELOPMENTS = [
 
 const FEATURED_PROPERTIES = [
   {
-    id: 'maple-grove',
-    badge: 'Renovate',
-    title: 'Maple Grove Residency',
-    image: '/images/AMADAREALTY_1.jpg',
-    price: '$600,000',
-    address: '2217 Cedar Grove Way, Denver, Co 80206',
-    beds: 2,
-    baths: 2,
-    sqft: 2150,
+    id: 'address-residences',
+    badge: 'Buy',
+    title: 'ADDRESS RESIDENCES',
+    image: '/images/ADDRESS RESIDENCES_1.jpg',
+    price: 'AED 11,995,000',
+    address: 'Jumeirah Beach Resort, Dubai',
+    beds: '3 Bedroom + Maid',
+    sqft: '1,927 Sqft.',
+    extra: '2 Parking spaces',
   },
   {
-    id: 'silverleaf',
-    badge: 'Rent',
-    title: 'Silverleaf Residency',
-    image: '/images/AMADAREALTY_2.jpeg',
-    price: '$800,000',
-    address: '412 Bayview Terrace, Miami, Fl 33139',
-    beds: 2,
-    baths: 2,
-    sqft: 2100,
+    id: 'reportage-village',
+    badge: 'Buy',
+    title: 'Reportage Village',
+    image: '/images/Reportage Village_1.jpg',
+    price: 'AED 4,600,000',
+    address: 'Abu Dhabi, UAE',
+    beds: '3 Bedrooms Townhouse',
+    sqft: '4,100 Sqft.',
   },
   {
-    id: 'downtown-horizon',
-    badge: 'Sell',
-    title: 'Downtown Horizon Living',
-    image: '/images/AMADAREALTY_3.jpg',
-    price: '$700,000',
-    address: 'Skyline Tower, Downtown Dubai',
-    beds: 2,
-    baths: 2,
-    sqft: 2200,
+    id: 'numa-reserve-villas',
+    badge: 'Buy',
+    title: 'Numa Reserve Villas',
+    image: '/images/Numa Reserve Villas_1.jpg',
+    price: 'AED 12,000,000',
+    address: 'Dubai, UAE',
+    beds: '5, 6 & 7 Bedroom Villas',
+    sqft: '6,000 to 13,000 Sqft.',
   },
   {
-    id: 'palm-court',
-    badge: 'Sell',
-    title: 'Palm Court Residences',
-    image: '/images/AMADAREALTY_4.jpg',
-    price: '$950,000',
-    address: '18 Marina Walk, Dubai Marina',
-    beds: 3,
-    baths: 3,
-    sqft: 2800,
+    id: 'talea-by-beyond',
+    badge: 'Buy',
+    title: 'Talea by Beyond',
+    image: '/images/Talea by Beyond_1.jpg',
+    price: 'AED 2,200,000 - 9,000,000',
+    address: 'Dubai, UAE',
+    beds: '1 to 4-Bedroom Penthouse',
+    sqft: '756 - 4,462 Sqft.',
   },
   {
-    id: 'oak-ridge',
-    badge: 'Rent',
-    title: 'Oak Ridge Estate',
-    image: '/images/AMADAREALTY_5.jpg',
-    price: '$520,000',
-    address: '904 Highland Avenue, Austin, Tx 78704',
-    beds: 2,
-    baths: 2,
-    sqft: 1900,
-  },
-  {
-    id: 'crescent-bay',
-    badge: 'Renovate',
-    title: 'Crescent Bay Villas',
-    image: '/images/AMADAREALTY_6.jpg',
-    price: '$1,150,000',
-    address: '7 Palm Jumeirah Crescent, Dubai',
-    beds: 4,
-    baths: 4,
-    sqft: 3400,
+    id: 'nad-al-sheba-gardens',
+    badge: 'Buy',
+    title: 'Nad Al Sheba Gardens',
+    image: '/images/Nad Al Sheba Gardens_1.jpg',
+    price: 'AED 5,000,000',
+    address: 'Nad Al Sheba, Dubai',
+    beds: '3 BR Townhouses to 7 BR Villas',
+    sqft: '3,292 - 8,706 Sqft.',
   },
 ]
 
@@ -226,6 +212,17 @@ function SqftIcon() {
   )
 }
 
+function CarIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11 2 11.5 2 12v4c0 .6.4 1 1 1h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="7" cy="17" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="17" cy="17" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M5 17H9M15 17h4" stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  )
+}
+
 function HomePage() {
   return (
     <>
@@ -246,40 +243,48 @@ function HomePage() {
             <div className="featured__grid">
               {FEATURED_PROPERTIES.map((property) => (
                 <article key={property.id} className="property-card">
-                  <div className="property-card__media">
-                    <img
-                      src={property.image}
-                      alt={property.title}
-                      className="property-card__image"
-                      loading="lazy"
-                    />
-                    <span className="property-card__badge">{property.badge}</span>
-                  </div>
+                  <Link to={`/property/${property.id}`} className="property-card__link" aria-label={`View ${property.title}`}>
+                    <div className="property-card__media">
+                      <img
+                        src={property.image}
+                        alt={property.title}
+                        className="property-card__image"
+                        loading="lazy"
+                      />
+                      <span className="property-card__badge">{property.badge}</span>
+                    </div>
 
-                  <div className="property-card__top">
-                    <h3>{property.title}</h3>
-                    <p className="property-card__price">{property.price}</p>
-                  </div>
+                    <div className="property-card__top">
+                      <h3>{property.title}</h3>
+                      <p className="property-card__price">{property.price}</p>
+                    </div>
 
-                  <p className="property-card__address">
-                    <PinIcon />
-                    <span>{property.address}</span>
-                  </p>
+                    <p className="property-card__address">
+                      <PinIcon />
+                      <span>{property.address}</span>
+                    </p>
 
-                  <ul className="property-card__meta">
-                    <li>
-                      <BedIcon />
-                      <span>{property.beds} Beds</span>
-                    </li>
-                    <li>
-                      <BathIcon />
-                      <span>{property.baths} Baths</span>
-                    </li>
-                    <li>
-                      <SqftIcon />
-                      <span>{property.sqft} Sqft</span>
-                    </li>
-                  </ul>
+                    <ul className="property-card__meta">
+                      {property.beds ? (
+                        <li>
+                          <BedIcon />
+                          <span>{property.beds}</span>
+                        </li>
+                      ) : null}
+                      {property.sqft ? (
+                        <li>
+                          <SqftIcon />
+                          <span>{property.sqft}</span>
+                        </li>
+                      ) : null}
+                      {property.extra ? (
+                        <li>
+                          <CarIcon />
+                          <span>{property.extra}</span>
+                        </li>
+                      ) : null}
+                    </ul>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -313,36 +318,43 @@ function HomePage() {
               </p>
               <LabelSlideButton
                 label="Learn more about us"
-                link="/#group"
+                link="/contact"
                 newTab={false}
-                padding="8px 14px"
-                gap={10}
-                rounded={8}
+                padding="9px 18px"
+                gap={8}
+                rounded={6}
                 colors={{
                   fill: '#000000',
                   textColor: '#FFFFFF',
-                  hoverFill: '#FFFFFF',
-                  hoverTextColor: '#000000',
+                  hoverFill: '#27272a',
+                  hoverTextColor: '#FFFFFF',
                 }}
                 border={{
                   borderColor: '#000000',
                   borderStyle: 'solid',
                   borderWidth: 1,
                 }}
-                hoverBorderColor="#000000"
+                hoverBorderColor="#27272a"
                 icon={{
                   side: 'right',
-                  size: 12,
+                  size: 11,
                   type: 'symbol',
-                  angle: 0,
+                  angle: 315,
                   color: '#000000',
-                  padding: 6,
+                  padding: 4,
                   rounded: 100,
                   background: '#FFFFFF',
-                  hoverColor: '#FFFFFF',
-                  restSymbol: '→',
-                  hoverSymbol: '→',
-                  hoverBackground: '#000000',
+                  hoverBackground: '#FFFFFF',
+                  hoverColor: '#000000',
+                  restSymbol: '↗',
+                  hoverSymbol: '↗',
+                }}
+                style={{
+                  letterSpacing: '0.07em',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  marginTop: '0.5rem',
                 }}
               />
             </div>
@@ -420,10 +432,10 @@ function HomePage() {
             <div className="partners__loop">
               <LogoLoop
                 logos={PARTNER_LOGOS}
-                speed={80}
+                speed={70}
                 direction="left"
-                logoHeight={48}
-                gap={48}
+                logoHeight={58}
+                gap={52}
                 hoverSpeed={0}
                 scaleOnHover
                 fadeOut

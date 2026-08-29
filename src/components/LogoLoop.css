@@ -74,12 +74,12 @@
 
 .logoloop__item img {
   height: var(--logoloop-logoHeight);
-  max-width: 160px;
+  max-width: 190px;
   width: auto;
   display: block;
   object-fit: contain;
-  filter: grayscale(100%) contrast(110%);
-  opacity: 0.8;
+  filter: grayscale(100%) contrast(115%);
+  opacity: 0.9;
   image-rendering: -webkit-optimize-contrast;
   -webkit-user-drag: none;
   pointer-events: none;
@@ -92,7 +92,7 @@
 
 .logoloop--scale-hover .logoloop__item:hover img,
 .logoloop--scale-hover .logoloop__item:hover .logoloop__node {
-  transform: scale(1.12);
+  transform: scale(1.1);
   transform-origin: center center;
   filter: grayscale(0%) contrast(100%);
   opacity: 1;
