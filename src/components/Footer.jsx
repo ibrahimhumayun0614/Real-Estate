@@ -10,10 +10,8 @@ const QUICK_LINKS = [
 ]
 
 const UTILITY_LINKS = [
-  { label: 'Privacy policy', href: '#privacy' },
-  { label: 'Terms of use', href: '#terms' },
-  { label: 'Cookie policy', href: '#cookies' },
-  { label: 'Careers', href: '#careers' },
+  { label: 'Privacy policy', href: '/privacy' },
+  { label: 'Terms & Conditions', href: '/terms' },
 ]
 
 function Footer() {

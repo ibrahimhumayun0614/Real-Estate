@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SiteHeader from '../components/SiteHeader'
 import HeroSection from '../components/HeroSection'
 import Footer from '../components/Footer'
+import LabelSlideButton from '../components/LabelSlideButton'
 
 function InstagramIcon() {
   return (
@@ -26,15 +27,6 @@ function YouTubeIcon() {
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
       <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
       <polygon points="10 15 15 12 10 9 10 15" fill="currentColor" stroke="none" />
-    </svg>
-  )
-}
-
-function ArrowRightIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
     </svg>
   )
 }
@@ -141,10 +133,47 @@ function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="contact-card__submit">
-                  <span>{submitted ? 'MESSAGE SENT' : 'SUBMIT NOW'}</span>
-                  <ArrowRightIcon />
-                </button>
+                <LabelSlideButton
+                  label={submitted ? 'MESSAGE SENT' : 'SUBMIT NOW'}
+                  buttonType="submit"
+                  padding="9px 18px"
+                  gap={8}
+                  rounded={6}
+                  colors={{
+                    fill: '#000000',
+                    textColor: '#FFFFFF',
+                    hoverFill: '#27272a',
+                    hoverTextColor: '#FFFFFF',
+                  }}
+                  border={{
+                    borderColor: '#000000',
+                    borderStyle: 'solid',
+                    borderWidth: 1,
+                  }}
+                  hoverBorderColor="#27272a"
+                  icon={{
+                    side: 'right',
+                    size: 11,
+                    type: 'symbol',
+                    angle: 0,
+                    color: '#000000',
+                    padding: 4,
+                    rounded: 100,
+                    background: '#FFFFFF',
+                    hoverBackground: '#FFFFFF',
+                    hoverColor: '#000000',
+                    restSymbol: '→',
+                    hoverSymbol: '→',
+                  }}
+                  style={{
+                    alignSelf: 'flex-start',
+                    marginTop: '0.4rem',
+                    letterSpacing: '0.07em',
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                  }}
+                />
               </form>
 
               <div className="contact-card__mail">

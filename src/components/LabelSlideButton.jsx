@@ -377,6 +377,7 @@ export function LabelSlideButton(props) {
 
   return (
     <Tag
+      className={props.className}
       {...tagProps}
       ref={scope}
       onPointerEnter={onEnter}
