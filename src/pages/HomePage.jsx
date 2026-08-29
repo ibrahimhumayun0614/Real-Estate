@@ -318,7 +318,7 @@ function HomePage() {
               </p>
               <LabelSlideButton
                 label="Learn more about us"
-                link="/contact"
+                link="/about"
                 newTab={false}
                 padding="9px 18px"
                 gap={8}
