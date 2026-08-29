@@ -5,10 +5,88 @@ import SiteHeader from '../components/SiteHeader'
 import HeroSection from '../components/HeroSection'
 import Footer from '../components/Footer'
 
-const PARTNER_LOGOS = Array.from({ length: 8 }, (_, index) => ({
-  node: <div className="partner-logo-placeholder" aria-hidden="true" />,
-  title: `Partner ${index + 1}`,
-}))
+const PARTNER_LOGOS = [
+  {
+    src: '/images/partners/Al-Habtoor-Group.png.png',
+    alt: 'Al Habtoor Group',
+    title: 'Al Habtoor Group',
+  },
+  {
+    src: '/images/partners/Dubai-Properties-Logo.png.png',
+    alt: 'Dubai Properties',
+    title: 'Dubai Properties',
+  },
+  {
+    src: '/images/partners/Imtiaz-Logo.png',
+    alt: 'Imtiaz Developments',
+    title: 'Imtiaz Developments',
+  },
+  {
+    src: '/images/partners/Meraas1.png',
+    alt: 'Meraas',
+    title: 'Meraas',
+  },
+  {
+    src: '/images/partners/NSHAMA2.png.png',
+    alt: 'Nshama',
+    title: 'Nshama',
+  },
+  {
+    src: '/images/partners/One-Development.png.png',
+    alt: 'One Development',
+    title: 'One Development',
+  },
+  {
+    src: '/images/partners/Properties-For-Sale-By-GFS-Development.png',
+    alt: 'GFS Development',
+    title: 'GFS Development',
+  },
+  {
+    src: '/images/partners/Properties-For-Sale-By-Modon.png',
+    alt: 'Modon Properties',
+    title: 'Modon Properties',
+  },
+  {
+    src: '/images/partners/Properties-For-Sale-by-RAK-Properties.png',
+    alt: 'RAK Properties',
+    title: 'RAK Properties',
+  },
+  {
+    src: '/images/partners/REPORTAGE VILLAGE FINAL LOGO B-W abudhabi-01.png',
+    alt: 'Reportage Properties',
+    title: 'Reportage Properties',
+  },
+  {
+    src: '/images/partners/Samana-logo-1.png',
+    alt: 'Samana Developers',
+    title: 'Samana Developers',
+  },
+  {
+    src: '/images/partners/aldar-properties-logo-1.png.png',
+    alt: 'Aldar Properties',
+    title: 'Aldar Properties',
+  },
+  {
+    src: '/images/partners/arada-developer-1.png.png',
+    alt: 'Arada Developer',
+    title: 'Arada Developer',
+  },
+  {
+    src: '/images/partners/ellington.png.png',
+    alt: 'Ellington Properties',
+    title: 'Ellington Properties',
+  },
+  {
+    src: '/images/partners/hh-logo-2.png',
+    alt: 'HH Development',
+    title: 'HH Development',
+  },
+  {
+    src: '/images/partners/omniyat.png',
+    alt: 'Omniyat',
+    title: 'Omniyat',
+  },
+]
 
 const FEATURED_DEVELOPMENTS = [
   { id: 1, image: '/images/AMADAREALTY_1.jpg', alt: 'Featured Development 1' },
